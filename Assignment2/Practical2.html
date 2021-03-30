@@ -47,9 +47,7 @@
 
                         $('#list-items').append("<li><input class='checkbox' type='checkbox'/>" + Task + "<a class='remove'></a><hr></li>");
                     }
-                    else {
-                        alert('Task Should not be empty');
-                    }
+                  
                     $('#do').val("");
                 });
                 $(document).on('change', '.checkbox', function () {
