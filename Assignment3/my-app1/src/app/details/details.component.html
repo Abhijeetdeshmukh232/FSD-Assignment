@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Employee Details</h2>
+  <table class="table">
+    <thead>
+      <tr><th>ID</th>
+        <th>EmployeePID</th>
+        <th>EmployeeName</th>
+        <th>EmployeeAddress</th>
+        <th>Update</th>
+        <th>Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of data2,let j = index">
+        <td>{{data.id}}</td>
+        <td >{{data.employeePID}}</td>
+        <td >{{data.employeeName}}</td>
+        <td >{{data.employeeAddress}}</td>
+        <td><a routerLink="update"><button (click)="updateEmployee(data )">Update</button></a></td>
+        <td><button (click)="deleteEmployee(data)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
