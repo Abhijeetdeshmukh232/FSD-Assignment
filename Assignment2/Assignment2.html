@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #id{
+        border-width: 3px;
+        height: 500px;
+        width:500px;
+        background-color:lightgrey;
+    }
+    #c1:checked{
+  text-decoration:line-through;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+<body>
+    
+        <div class="Main">
+        
+        
+        <div id="id">
+            <div class="input-group mb-3">
+                <h1 style="margin-left: 25%;">Add Employee</h1><hr>
+                <input type="text" class="form-control" id="do" placeholder="Applicant's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="btn_add">Button</button>
+                <hr>
+              </div>
+        </div>
+        </div>
+   
+</body>
+<script>
+    $("#btn_add").click(function() {
+             var Task = $("#do").val();
+             console.log(Task);
+             if(Task){
+               $("#id").append(`<input type='checkbox' name='check' id='c1' class='strikethrough'>`
+               +Task);
+            
+             if($('#c1').prop("checked") == true) {
+                alert("Checkbox is checked.");
+              }
+              else if($('#c1').prop("checked") == false) {
+                alert("Checkbox is unchecked.");
+              }
+               }
+ });
+</script>
+</html>
