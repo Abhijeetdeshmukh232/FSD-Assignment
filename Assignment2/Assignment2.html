@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    
 </head>
 <style>
     #id{
@@ -18,7 +20,28 @@
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   
+<script>
+  
+  $(document).ready(function(){
+      $("#btn_add").click(function() {
+               var Task = $("#do").val();
+               if(Task){
+                 $("#id").append(`<input type='checkbox' name='check' id='btn' class='strikethrough'>`
+                 +Task);
+              }
+        
+      });
+      $('input[type="checkbox"]').click(function(){
+              if($(this).prop("checked") == true){
+              }
+              else if($(this).prop("checked") == false){
+               
+              }
+      });
+    
+  
+    });
+  </script>
 <body>
     
         <div class="Main">
@@ -30,26 +53,10 @@
                 <input type="text" class="form-control" id="do" placeholder="Applicant's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary" type="button" id="btn_add">Button</button>
                 <hr>
+                <strike id="str"></strike>
               </div>
         </div>
         </div>
    
 </body>
-<script>
-    $("#btn_add").click(function() {
-             var Task = $("#do").val();
-             console.log(Task);
-             if(Task){
-               $("#id").append(`<input type='checkbox' name='check' id='c1' class='strikethrough'>`
-               +Task);
-            
-             if($('#c1').prop("checked") == true) {
-                alert("Checkbox is checked.");
-              }
-              else if($('#c1').prop("checked") == false) {
-                alert("Checkbox is unchecked.");
-              }
-               }
- });
-</script>
 </html>
